@@ -6,9 +6,11 @@ public class Handler {
     public static void handler() {
 
         Scanner scanner = new Scanner(System.in);
+
         String value;
         String risk;
         char exit;
+
         do {
             System.out.print("Введіть значення: ");
             value = scanner.nextLine();
@@ -25,8 +27,8 @@ public class Handler {
 
                     int a = Integer.parseInt(value);
                     int b = Integer.parseInt(risk);
-                    System.out.println("Ми ввели значення = " + a);
-                    System.out.println("Ми ввели ризик = " + b);
+                    System.out.println("Ви ввели значення = " + a);
+                    System.out.println("Ви ввели ризик = " + b);
                     System.out.println("==============================");
                 }
             }

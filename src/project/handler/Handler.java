@@ -12,17 +12,25 @@ public class Handler {
         char exit;
 
         do {
+
             System.out.print("Введіть значення: ");
             value = scanner.nextLine();
             exit = value.charAt(0);
+
             if (exit == 'q') {
+
                 System.out.println("Ви ввели q і вийшли з програми");
+
             } else  {
+
                 System.out.print("Введіть ризик: ");
                 risk = scanner.nextLine();
                 exit = risk.charAt(0);
+
                 if (exit == 'q') {
+
                     System.out.println("Ви ввели q і вийшли з програми");
+
                 } else {
 
                     int a = Integer.parseInt(value);
@@ -30,6 +38,7 @@ public class Handler {
                     System.out.println("Ви ввели значення = " + a);
                     System.out.println("Ви ввели ризик = " + b);
                     System.out.println("==============================");
+
                 }
             }
         } while (exit != 'q');

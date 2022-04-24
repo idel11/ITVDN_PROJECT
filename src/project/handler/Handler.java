@@ -7,15 +7,15 @@ public class Handler {
 
         Scanner scanner = new Scanner(System.in);
 
-        String value;
+        String bet;
         String risk;
         char exit;
 
         do {
 
-            System.out.print("Введіть значення: ");
-            value = scanner.nextLine();
-            exit = value.charAt(0);
+            System.out.print("Введіть ставку: ");
+            bet = scanner.nextLine();
+            exit = bet.charAt(0);
 
             if (exit == 'q') {
 
@@ -33,7 +33,7 @@ public class Handler {
 
                 } else {
 
-                    int a = Integer.parseInt(value);
+                    int a = Integer.parseInt(bet);
                     int b = Integer.parseInt(risk);
                     System.out.println("Ви ввели значення = " + a);
                     System.out.println("Ви ввели ризик = " + b);

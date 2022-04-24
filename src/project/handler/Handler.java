@@ -33,10 +33,10 @@ public class Handler {
 
                 } else {
 
-                    int a = Integer.parseInt(bet);
-                    int b = Integer.parseInt(risk);
-                    System.out.println("Ви ввели значення = " + a);
-                    System.out.println("Ви ввели ризик = " + b);
+                    int betInt = Integer.parseInt(bet);
+                    int riskInt = Integer.parseInt(risk);
+                    System.out.println("Ви ввели ставку = " + betInt);
+                    System.out.println("Ви ввели ризик = " + riskInt);
                     System.out.println("==============================");
 
                 }

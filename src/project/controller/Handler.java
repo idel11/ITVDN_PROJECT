@@ -1,27 +1,32 @@
-package project.handler;
+package project.controller;
 
+import project.model.Bet;
+
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static project.db.Storage.bets;
 
 public class Handler {
     public static void handler() {
 
         Scanner scanner = new Scanner(System.in);
 
-        String bet;
+        String value;
         String risk;
         char exit;
 
         do {
 
             System.out.print("Введіть ставку: ");
-            bet = scanner.nextLine();
-            exit = bet.charAt(0);
+            value = scanner.nextLine();
+            exit = value.charAt(0);
 
             if (exit == 'q') {
 
                 System.out.println("Ви ввели q і вийшли з програми");
 
-            } else  {
+            } else {
 
                 System.out.print("Введіть ризик: ");
                 risk = scanner.nextLine();
@@ -33,10 +38,16 @@ public class Handler {
 
                 } else {
 
-                    int betInt = Integer.parseInt(bet);
-                    int riskInt = Integer.parseInt(risk);
-                    System.out.println("Ви ввели ставку = " + betInt);
-                    System.out.println("Ви ввели ризик = " + riskInt);
+                    Bet bet = null;
+                    int valueInt = Integer.parseInt(value);
+                    double riskDouble = Double.parseDouble(risk);
+                    bet = new Bet(valueInt, riskDouble);
+                    bets.add(bet);
+
+
+                    System.out.println("Ви ввели ставку = " + valueInt);
+                    System.out.println("Ви ввели ризик = " + riskDouble);
+                    System.out.println(bets);
                     System.out.println("==============================");
 
                 }

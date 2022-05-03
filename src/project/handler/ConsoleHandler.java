@@ -38,19 +38,10 @@ public class ConsoleHandler {
 
                 } else {
 
-
-
                     int valueInt = Integer.parseInt(value);
                     double riskDouble = Double.parseDouble(risk);
                     Bet bet = new Bet(valueInt, riskDouble);
-                    System.out.println(bet.toString());
                     bets.add(bet);
-
-
-
-                    System.out.println("Ви ввели ставку = " + valueInt);
-                    System.out.println("Ви ввели ризик = " + riskDouble);
-                    System.out.println(bets);
                     System.out.println("==============================");
 
                 }

@@ -1,9 +1,9 @@
 package project;
 
-import project.controller.Handler;
+import project.handler.ConsoleHandler;
 
 public class Main {
     public static void main(String[] args) {
-        Handler.handler();
+        ConsoleHandler.handler();
     }
 }

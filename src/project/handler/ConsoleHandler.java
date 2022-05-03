@@ -1,17 +1,14 @@
-package project.controller;
+package project.handler;
 
-import project.model.Bet;
+import project.models.Bet;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import static project.db.Storage.bets;
 
-public class Handler {
+public class ConsoleHandler {
 
     public static void handler() {
-
-
 
         Scanner scanner = new Scanner(System.in);
 
@@ -41,11 +38,14 @@ public class Handler {
 
                 } else {
 
-                    Bet bet;
+
+
                     int valueInt = Integer.parseInt(value);
                     double riskDouble = Double.parseDouble(risk);
-                    bet = new Bet(valueInt, riskDouble);
+                    Bet bet = new Bet(valueInt, riskDouble);
+                    System.out.println(bet.toString());
                     bets.add(bet);
+
 
 
                     System.out.println("Ви ввели ставку = " + valueInt);

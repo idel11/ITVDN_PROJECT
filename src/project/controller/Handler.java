@@ -8,7 +8,10 @@ import java.util.Scanner;
 import static project.db.Storage.bets;
 
 public class Handler {
+
     public static void handler() {
+
+
 
         Scanner scanner = new Scanner(System.in);
 
@@ -38,7 +41,7 @@ public class Handler {
 
                 } else {
 
-                    Bet bet = null;
+                    Bet bet;
                     int valueInt = Integer.parseInt(value);
                     double riskDouble = Double.parseDouble(risk);
                     bet = new Bet(valueInt, riskDouble);

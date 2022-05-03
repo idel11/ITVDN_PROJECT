@@ -5,6 +5,7 @@ public class Bet {
     private int value;
     private Double risk;
 
+
     @Override
     public String toString() {
         return "Bet{" +
@@ -14,8 +15,6 @@ public class Bet {
     }
 
     public Bet(int valueInt, double riskDouble) {
-
-
 
     }
 }

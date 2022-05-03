@@ -1,5 +1,7 @@
 package project.handler;
 
+import project.dao.BetDao;
+import project.dao.impl.BetDaoImpl;
 import project.models.Bet;
 
 import java.util.Scanner;
@@ -7,6 +9,8 @@ import java.util.Scanner;
 import static project.db.Storage.bets;
 
 public class ConsoleHandler {
+
+    private static BetDao betDao = new BetDaoImpl();
 
     public static void handler() {
 
@@ -17,7 +21,6 @@ public class ConsoleHandler {
         char exit;
 
         do {
-
             System.out.print("Введіть ставку: ");
             value = scanner.nextLine();
             exit = value.charAt(0);
@@ -41,11 +44,15 @@ public class ConsoleHandler {
                     int valueInt = Integer.parseInt(value);
                     double riskDouble = Double.parseDouble(risk);
                     Bet bet = new Bet(valueInt, riskDouble);
-                    bets.add(bet);
+                    betDao.add(bet);
+                   // bets.add(bet);
                     System.out.println("==============================");
 
                 }
             }
         } while (exit != 'q');
+
+        System.out.println(betDao.getAll());
+
     }
 }

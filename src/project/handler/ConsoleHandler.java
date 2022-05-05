@@ -3,56 +3,48 @@ package project.handler;
 import project.dao.BetDao;
 import project.dao.impl.BetDaoImpl;
 import project.models.Bet;
-
 import java.util.Scanner;
-
-import static project.db.Storage.bets;
 
 public class ConsoleHandler {
 
-    private static BetDao betDao = new BetDaoImpl();
+    public static BetDao betDao = new BetDaoImpl();
 
     public static void handler() {
 
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
 
-        String value;
-        String risk;
-        char exit;
+            char exit;
 
-        do {
-            System.out.print("Введіть ставку: ");
-            value = scanner.nextLine();
-            exit = value.charAt(0);
-
-            if (exit == 'q') {
-
-                System.out.println("Ви ввели q і вийшли з програми");
-
-            } else {
-
-                System.out.print("Введіть ризик: ");
-                risk = scanner.nextLine();
-                exit = risk.charAt(0);
+            do {
+                System.out.print("Введіть value та risk для вашої ставки: ");
+                String betCons = scanner.nextLine();
+                exit = betCons.charAt(0);
+                String[] s = betCons.split(" ");
 
                 if (exit == 'q') {
 
                     System.out.println("Ви ввели q і вийшли з програми");
 
                 } else {
-
-                    int valueInt = Integer.parseInt(value);
-                    double riskDouble = Double.parseDouble(risk);
+                    int valueInt = Integer.parseInt(s[0]);
+                    double riskDouble = Double.parseDouble(s[1]);
                     Bet bet = new Bet(valueInt, riskDouble);
                     betDao.add(bet);
-                   // bets.add(bet);
-                    System.out.println("==============================");
-
+                    System.out.println("===================================");
                 }
-            }
-        } while (exit != 'q');
 
-        System.out.println(betDao.getAll());
+            } while (exit != 'q');
+
+        }
+
+        catch (NumberFormatException e) {
+            System.out.println("Ви ввели НЕКОРРЕКТІ дані і програма вийшла по такій помилці: " + e);
+        }
+
+        catch (ArrayIndexOutOfBoundsException e1) {
+            System.out.println("Ви ввели НЕПОВНІ дані і програма вийшла по такій помилці: " + e1);
+        }
 
     }
+
 }

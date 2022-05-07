@@ -19,7 +19,5 @@ public class BetDaoImpl implements BetDao {
     }
 
     @Override
-    public Bet getBet(int index) {
-        return Storage.bets.get(index);
-    }
+    public Bet getBet(int index) { return Storage.bets.get(index); }
 }

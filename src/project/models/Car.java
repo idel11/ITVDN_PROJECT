@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Car {
 
-    private String color;
     private int id;
     private String name;
+    private String color;
     private float engineVolume;
     private int yearOfProduction;
 
@@ -18,8 +18,19 @@ public class Car {
         this.yearOfProduction = yearOfProduction;
     }
 
-    public Car(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", yearOfProduction=" + yearOfProduction +
+                '}';
+    }
+
+    /* public Car() {
+
     }
 
     public String getColor() {
@@ -61,5 +72,6 @@ public class Car {
     public void setYearOfProduction(int yearOfProduction) {
         this.yearOfProduction = yearOfProduction;
     }
+*/
 
 }
